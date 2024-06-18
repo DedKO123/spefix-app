@@ -27,16 +27,24 @@ cp .env.example .env
 ```
 ./vendor/bin/sail up -d
 ```
+7. Install the NPM dependencies:
+```
+./vendor/bin/sail npm i
+```
+8. Build the assets:
+```
+./vendor/bin/sail npm run dev
+```
 
-7. Generate the application key:
+10. Generate the application key:
 ```
 ./vendor/bin/sail artisan key:generate
 ```
-8. Run the database migrations:
+11. Run the database migrations:
 ```
 ./vendor/bin/sail artisan migrate --seed
 ```
-9. Visit the application in your browser:
+12. Visit the application in your browser:
 ```
 http://localhost
 ```
