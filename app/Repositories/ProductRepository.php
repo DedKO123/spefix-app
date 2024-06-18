@@ -12,12 +12,12 @@ class ProductRepository implements ProductRepositoryInterface
 {
     public function all(): Collection
     {
-        return Product::all();
+        return Product::query()->latest()->all();
     }
 
     public function getWithPagination(int $perPage): LengthAwarePaginator
     {
-        return Product::paginate($perPage);
+        return Product::query()->latest()->paginate($perPage);
     }
 
     public function create(ProductDTO $productDTO): Product

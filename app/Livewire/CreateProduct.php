@@ -35,7 +35,7 @@ class CreateProduct extends Component
 
         $productService->create($productDto);
 
-        return $this->redirectRoute('products');
+        return $this->redirectRoute('dashboard');
     }
 
     public function render()

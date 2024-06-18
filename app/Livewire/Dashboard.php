@@ -5,9 +5,11 @@ namespace App\Livewire;
 use App\Models\Product;
 use App\Services\ProductService;
 use Livewire\Component;
+use Livewire\WithPagination;
 
-class ProductsTable extends Component
+class Dashboard extends Component
 {
+    use WithPagination;
 
     public function delete(Product $product)
     {
@@ -18,7 +20,7 @@ class ProductsTable extends Component
     public function render()
     {
         $productService = app(ProductService::class);
-        return view('livewire.products-table', [
+        return view('livewire.dashboard', [
             'products' => $productService->getWithPagination(5),
         ]);
     }
