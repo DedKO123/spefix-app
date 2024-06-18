@@ -44,7 +44,12 @@ cp .env.example .env
 ```
 ./vendor/bin/sail artisan migrate --seed
 ```
-12. Visit the application in your browser:
+12. Create a symbolic link to the storage directory:
+```
+./vendor/bin/sail artisan storage:link
+```
+
+13. Visit the application in your browser:
 ```
 http://localhost
 ```
